@@ -1,0 +1,104 @@
+ @use 'sass:math'as math;
+
+
+$theme-colors: (
+  "green": #02B893,
+  "black": #1B354C,
+  "light-grey": #789BB4,
+  "white-grey": #F7F8FA,
+  "green-neon": #44CFB1,
+  "red": #E50046,
+  "orange": #FF8A00,
+  "light-green-2": #D5EDE6,
+  "light-grey-1": #DCDEE7,
+  "light-grey-2": #ECEEF3,
+  "info": #17a2b8,
+  "white": #FFFFFF,
+  "bg-grey-light": #F1F7FC,
+  "light-green-1": #A0D9C6,
+  "dim-white": #D3DBE0,
+  "yellow": #ff9313,
+  "blue": #65ccff,
+  "grey": #566e80
+  );
+
+
+$grid-breakpoints: (xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px) !default;
+
+$container-max-widths: (sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px) !default;
+
+$displays: none,
+inline,
+inline-block,
+block,
+table,
+table-row,
+table-cell,
+flex,
+inline-flex !default;
+$overflows: auto,
+hidden !default;
+$positions: static,
+relative,
+absolute,
+fixed,
+sticky !default;
+
+$main-content-padding-y: 40px !default;
+$main-content-padding-x: 15px !default;
+$grid-columns: 12 !default;
+$grid-gutter-width: 10px !default;
+
+$transition-base: all 0.2s ease-in-out !default;
+$transition-fade: opacity 0.15s linear !default;
+$transition-collapse: height 0.35s ease !default;
+
+$border-radius: 15px !default;
+$enable-grid-classes: true !default;
+
+$yiq-text-dark: map-get($theme-colors, 'black') !default;
+$yiq-text-light: map-get($theme-colors, 'white') !default;
+$yiq-contrasted-threshold: 150 !default;
+
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+$spacer: 1rem !default;
+$spacers: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge((0: 0,
+    1: ($spacer * 0.25),
+    2: ($spacer * 0.5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 3),
+
+    -1: ($spacer * -0.25),
+    -2: ($spacer * -0.5),
+    -3:($spacer * -1),
+    -4: ($spacer * -1.5),
+    -5: ($spacer * -3)),
+  $spacers);
+
+// This variable affects the `.h-*` and `.w-*` classes.
+$sizes: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$sizes: map-merge((25: 25%,
+    50: 50%,
+    75: 75%,
+    100: 100%,
+    auto: auto),
+  $sizes);
+
+

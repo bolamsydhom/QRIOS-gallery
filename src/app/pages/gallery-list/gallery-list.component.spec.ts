@@ -47,4 +47,13 @@ describe('GalleryListComponent', () => {
     expect(images.length).toBe(1);
   });
 
+  it('should select image on click', ()=>{
+    imageService.getAllImages.and.returnValue(of(imagesResponse));
+    component.ngOnInit();
+    fixture.detectChanges();
+    const image = fixture.debugElement.query(By.css('.figure'));
+    image.nativeElement.click();
+    expect(component.chosenImage).toBeTruthy();
+    expect(component.chosenImage.id).toEqual('0');
+  })
 });

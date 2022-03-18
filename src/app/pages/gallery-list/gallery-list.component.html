@@ -6,7 +6,7 @@
         <div class="col-3 " *ngFor="let image of imageList$ | async">
             <div class="card pointer" (click)="onChooseImage(image); modalService.open('image')">
                 <div class="card-body d-flex flex-column align-items-center">
-                    <figure>
+                    <figure class="figure">
                         <img [src]="image.download_url" alt="">
                     </figure>
                     <p class="card-text">{{image.author}}</p>

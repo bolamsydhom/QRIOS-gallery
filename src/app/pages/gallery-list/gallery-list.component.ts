@@ -20,7 +20,6 @@ export class GalleryListComponent implements OnInit {
   }
 
   onChooseImage(image: Image) {
-    this.imageService.chooseImage(image);
     this.chosenImage = image;
   }
 }

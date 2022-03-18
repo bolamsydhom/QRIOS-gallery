@@ -8,20 +8,11 @@ import { Image } from '../_models/image.model';
   providedIn: 'root'
 })
 export class ImagesService {
-  private chosenImage!: Image;
 
   constructor(private httpClient: HttpClient) { }
   getAllImages(): Observable<Image[]> {
     return this.httpClient.get<Image[]>('https://picsum.photos/v2/list').pipe(
       shareReplay()
     );
-  }
-
-  chooseImage(image: Image): void {
-    this.chosenImage = image;
-  }
-
-  getChosenImage(): Image {
-    return this.chosenImage;
   }
 }
